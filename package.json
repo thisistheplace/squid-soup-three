@@ -2,7 +2,7 @@
   "name": "squid_soup_three",
   "version": "0.0.1",
   "description": "Threejs rendering of four tet / squid soup light show",
-"repository": {
+  "repository": {
     "type": "git",
     "url": "git://github.com/thisistheplace/squid-soup-three.git"
   },
@@ -12,7 +12,7 @@
   "homepage": "https://github.com/thisistheplace/squid-soup-three",
   "main": "build/index.js",
   "scripts": {
-    "start": "webpack-serve --config ./webpack.serve.config.js --open",
+    "start": "webpack-serve --config ./webpack.serve.config.js --open --port 8050",
     "validate-init": "python _validate_init.py",
     "prepublishOnly": "npm run validate-init",
     "build:js": "webpack --mode production",
@@ -55,7 +55,7 @@
     "styled-jsx": "^3.2.1",
     "terser-webpack-plugin": "^2.3.0",
     "webpack-cli": "3.3.6",
-    "webpack-serve": "^3.1.0"
+    "webpack-serve": "^3.2.0"
   },
   "engines": {
     "node": ">=8.11.0",
