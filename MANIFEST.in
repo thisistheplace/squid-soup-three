@@ -1,0 +1,11 @@
+include squid_soup_three/squid_soup_three.min.js
+include squid_soup_three/squid_soup_three.min.js.map
+include squid_soup_three/async-*.js
+include squid_soup_three/async-*.js.map
+include squid_soup_three/*-shared.js
+include squid_soup_three/*-shared.js.map
+include squid_soup_three/metadata.json
+include squid_soup_three/package-info.json
+include README.md
+include LICENSE
+include package.json
