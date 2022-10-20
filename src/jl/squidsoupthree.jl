@@ -6,18 +6,12 @@ export squidsoupthree
     squidsoupthree(;kwargs...)
 
 A SquidSoupThree component.
-ExampleComponent is an example component.
-It takes a property, `label`, and
-displays it.
-It renders an input with the property `value`
-which is editable by the user.
+
 Keyword arguments:
-- `id` (String; optional): The ID used to identify this component in Dash callbacks.
-- `label` (String; required): A label that will be printed when this component is rendered.
-- `value` (String; optional): The value displayed in the input.
+- `id` (String; required): The ID used to identify the container for the IFC viewer component.
 """
 function squidsoupthree(; kwargs...)
-        available_props = Symbol[:id, :label, :value]
+        available_props = Symbol[:id]
         wild_props = Symbol[]
         return Component("squidsoupthree", "SquidSoupThree", "squid_soup_three", available_props, wild_props; kwargs...)
 end
