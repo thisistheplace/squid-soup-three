@@ -1,12 +1,13 @@
 import React, { useRef, useState, Suspense, useEffect } from 'react'
 import { extend, Canvas, useFrame, useThree } from '@react-three/fiber'
-import {OrbitControls, OrthographicCamera} from '@react-three/drei'
+import {OrbitControls, OrthographicCamera, Shadow } from '@react-three/drei'
 import FPSStats from 'react-fps-stats'
 import * as THREE from 'three'
 extend(THREE)
 
 import {Lights} from './lights'
 import {Sphere} from './sphere'
+import {Wires} from './wires'
 
 const Box = (props) => {
   // This reference gives us direct access to the THREE.Mesh object
@@ -42,6 +43,7 @@ const Model = (props) => {
         <>
             {/* <Box position={[0., 0., 0.]}/> */}
             <Sphere />
+            <Wires />
         </>
     )
 }
@@ -56,6 +58,7 @@ const Stage = (props) => {
           <Suspense fallback={null}>
             <Model/>
           </Suspense>
+          <Shadow />
       </Canvas>
       <FPSStats/>
     </div>
