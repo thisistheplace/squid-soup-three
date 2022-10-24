@@ -17,7 +17,7 @@ class WireLine extends THREE.Curve {
 		const tz = this.start.z + (this.finish.z - this.start.z) * t
 		return optionalTarget.set( tx, ty, tz )
 	}
-  
+
 }
 
 const Instances = (props) => {
@@ -25,9 +25,12 @@ const Instances = (props) => {
   const total = props.x * props.z
   var count = 0
   const [nextTime, setNextTime] = useState(0)
-  const start = new THREE.Vector3(0, -props.y * props.pacing / 2., 0)
+  const start = new THREE.Vector3(0, -1 * props.y * props.spacing / 2., 0)
   const finish = new THREE.Vector3(0, props.y * props.spacing / 2., 0)
-  const line = new WireLine(start, finish)
+  console.log(start)
+  console.log(finish)
+  // const line = new WireLine(start, finish)
+  const line = new THREE.LineCurve3(start, finish)
 
   useEffect(() => {
     const offset = new THREE.Vector3(
@@ -55,7 +58,7 @@ const Instances = (props) => {
 
   return (
     <instancedMesh ref={ref} args={[null, null, total]}>
-      <tubeGeometry parameters={[line, 20, 0.1, 8, true]} />
+      <tubeGeometry parameters={line} />
       <meshPhongMaterial vertexColors={true} />
     </instancedMesh>
   )

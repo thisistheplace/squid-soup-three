@@ -1,6 +1,6 @@
 import React, { useRef, useState, Suspense, useEffect } from 'react'
 import { extend, Canvas, useFrame, useThree } from '@react-three/fiber'
-import {OrbitControls, OrthographicCamera, Shadow } from '@react-three/drei'
+import {OrbitControls, OrthographicCamera, Shadow, ContactShadows } from '@react-three/drei'
 import FPSStats from 'react-fps-stats'
 import * as THREE from 'three'
 extend(THREE)
@@ -58,7 +58,7 @@ const Stage = (props) => {
           <Suspense fallback={null}>
             <Model/>
           </Suspense>
-          <Shadow />
+          {/* <ContactShadows opacity={1} scale={10} blur={1} far={10} resolution={256} color="#000000" /> */}
       </Canvas>
       <FPSStats/>
     </div>
